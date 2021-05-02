@@ -14,19 +14,23 @@ const Countries = ({ search }) => {
     }, [])
 
     return (
-        countries.filter(country => country.name.toLowerCase().includes(search.toLowerCase())).map(country => {
-            return (
-                <div key={country.name} className="country">
-                    <div>
-                        <img src={country.flag} alt={country.name} />
-                    </div>
-                    <div>
-                        <h3>{country.name}</h3>
-                        <p>{country.capital}</p>
-                    </div>
-                </div>
-            )
-        })
+        <div className="text-center">
+            {
+                countries.filter(country => country.name.toLowerCase().includes(search.toLowerCase())).map(country => {
+                    return (
+                        <div key={country.name} className="country">
+                            <div>
+                                <img src={country.flag} alt={country.name} />
+                            </div>
+                            <div>
+                                <h3>{country.name}</h3>
+                                <p>{country.capital}</p>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
     )
 }
 

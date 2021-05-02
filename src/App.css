@@ -9,6 +9,8 @@
   border-radius: 10px;
   margin: 0 0 10px 0;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .country div:first-child {
