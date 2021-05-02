@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 
-const Countries = () => {
+const Countries = ({ search }) => {
 
     const [countries, setCountries] = useState([])
 
@@ -14,7 +14,7 @@ const Countries = () => {
     }, [])
 
     return (
-        countries.map(country => {
+        countries.filter(country => country.name.toLowerCase().includes(search.toLowerCase())).map(country => {
             return (
                 <div key={country.name} className="country">
                     <div>

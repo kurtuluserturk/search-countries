@@ -1,9 +1,18 @@
 import React from 'react'
 
-const SearchCountry = () => {
+const SearchCountry = ({ search, handleSearch }) => {
     return (
         <div>
-            <h3>SearchCountry</h3>
+            <h3>Search Country</h3>
+            <form>
+                <input
+                    name="search"
+                    placeholder="search country by name"
+                    value={search}
+                    onChange={handleSearch}
+                />
+            </form>
+
         </div>
     )
 }
