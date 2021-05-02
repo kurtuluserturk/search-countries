@@ -6,6 +6,7 @@ const SearchCountry = ({ search, handleSearch }) => {
             <h3>Search Country</h3>
             <form>
                 <input
+                    className="search"
                     name="search"
                     placeholder="search country by name"
                     value={search}
