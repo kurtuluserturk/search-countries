@@ -5,16 +5,20 @@ const Countries = ({ search }) => {
 
     const [countries, setCountries] = useState([])
 
-    useEffect(() => {
+    const getData = () => {
         const url = 'https://restcountries.eu/rest/v2/all'
         axios
             .get(url)
             .then(response => setCountries(response.data))
-            .catch(error => console.log({ error }))
+            .catch(error => console.log({ error }));
+    }
+
+    useEffect(() => {
+        getData()
     }, [])
 
     return (
-        <div className="text-center">
+        <div>
             {
                 countries.filter(country => country.name.toLowerCase().includes(search.toLowerCase())).map(country => {
                     return (
